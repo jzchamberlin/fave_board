@@ -65,14 +65,8 @@
               <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"></textarea>
             </div>
 
-            <!-- Label and input for list_id -->
-            <div class="form-group">
-              <label for="list_id" class="control-label">
-                List
-              </label>
-
-              <input type="text" id="list_id" name="list_id" placeholder="List" class="form-control" value="<%= list.id %>">
-            </div>
+            <!-- Hidden input for list_id -->
+            <input type="hidden" name="list_id" value="<%= list.id %>">
 
             <button class="btn btn-success btn-block">
               Create Card
