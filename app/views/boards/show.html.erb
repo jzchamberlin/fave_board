@@ -38,9 +38,13 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a href="/cards/<%= card.id %>/edit">
+                  <% if current_user == card.list.board.user_id %>
+                    <a href="/cards/<%= card.id %>/edit">
+                      <%= card.name %>
+                    </a>
+                  <% else %>
                     <%= card.name %>
-                  </a>
+                  <% end %>
                 </h4>
               </div>
               <div class="panel-body">
