@@ -17,7 +17,7 @@ class ListsController < ApplicationController
     @list.board_id = params[:board_id]
 
     if @list.save
-      redirect_to "/lists", :notice => "List created successfully."
+      redirect_to :back, :notice => "List created successfully."
     else
       render 'new'
     end
