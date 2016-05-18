@@ -98,14 +98,8 @@
             <input type="text" id="name" name="name" placeholder="Name" class="form-control">
           </div>
 
-          <!-- Label and input for board_id -->
-          <div class="form-group">
-            <label for="board_id" class="control-label">
-              Board
-            </label>
-
-            <input type="text" id="board_id" name="board_id" placeholder="Board" class="form-control" value="<%= @board.id %>">
-          </div>
+          <!-- Hidden input for board_id -->
+          <input type="hidden" name="board_id" value="<%= @board.id %>">
 
           <button class="btn btn-success btn-block">
             Create List
