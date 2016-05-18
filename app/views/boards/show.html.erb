@@ -91,6 +91,7 @@
     </div>
   <% end %>
 
+  <% if current_user.id == @board.user_id %>
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -122,4 +123,5 @@
       </div>
     </div>
   </div>
+  <% end %>
 </div>
