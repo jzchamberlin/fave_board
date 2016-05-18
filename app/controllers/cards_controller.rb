@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     @card.list_id = params[:list_id]
 
     if @card.save
-      redirect_to "/cards", :notice => "Card created successfully."
+      redirect_to :back, :notice => "Card created successfully."
     else
       render 'new'
     end
