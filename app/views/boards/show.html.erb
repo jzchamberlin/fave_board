@@ -24,9 +24,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
-            <a href="/lists/<%= list.id %>/edit">
+            <% if current_user.id == list.board.user_id %>
+              <a href="/lists/<%= list.id %>/edit">
+                <%= list.name %>
+              </a>
+            <% else %>
               <%= list.name %>
-            </a>
+            <% end %>
           </h3>
         </div>
         <div class="panel-body">
