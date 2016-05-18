@@ -34,7 +34,7 @@ class ListsController < ApplicationController
     @list.board_id = params[:board_id]
 
     if @list.save
-      redirect_to "/lists", :notice => "List updated successfully."
+      redirect_to "/boards/#{@list.board_id}", :notice => "List updated successfully."
     else
       render 'edit'
     end

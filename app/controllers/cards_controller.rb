@@ -36,7 +36,7 @@ class CardsController < ApplicationController
     @card.list_id = params[:list_id]
 
     if @card.save
-      redirect_to "/cards", :notice => "Card updated successfully."
+      redirect_to "/boards/#{@card.list.board_id}", :notice => "Card updated successfully."
     else
       render 'edit'
     end
