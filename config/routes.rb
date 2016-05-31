@@ -1,4 +1,58 @@
 Rails.application.routes.draw do
+  get "/users", :controller => "users", :action => "index"
+  get "/users/:id", :controller => "users", :action => "show"
+
+  # Routes for the List_following resource:
+  # CREATE
+  get "/list_followings/new", :controller => "list_followings", :action => "new"
+  post "/create_list_following", :controller => "list_followings", :action => "create"
+
+  # READ
+  get "/list_followings", :controller => "list_followings", :action => "index"
+  get "/list_followings/:id", :controller => "list_followings", :action => "show"
+
+  # UPDATE
+  get "/list_followings/:id/edit", :controller => "list_followings", :action => "edit"
+  post "/update_list_following/:id", :controller => "list_followings", :action => "update"
+
+  # DELETE
+  get "/delete_list_following/:id", :controller => "list_followings", :action => "destroy"
+  #------------------------------
+
+  # Routes for the User_following resource:
+  # CREATE
+  get "/user_followings/new", :controller => "user_followings", :action => "new"
+  post "/create_user_following", :controller => "user_followings", :action => "create"
+
+  # READ
+  get "/user_followings", :controller => "user_followings", :action => "index"
+  get "/user_followings/:id", :controller => "user_followings", :action => "show"
+
+  # UPDATE
+  get "/user_followings/:id/edit", :controller => "user_followings", :action => "edit"
+  post "/update_user_following/:id", :controller => "user_followings", :action => "update"
+
+  # DELETE
+  get "/delete_user_following/:id", :controller => "user_followings", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Board_following resource:
+  # CREATE
+  get "/board_followings/new", :controller => "board_followings", :action => "new"
+  post "/create_board_following", :controller => "board_followings", :action => "create"
+
+  # READ
+  get "/board_followings", :controller => "board_followings", :action => "index"
+  get "/board_followings/:id", :controller => "board_followings", :action => "show"
+
+  # UPDATE
+  get "/board_followings/:id/edit", :controller => "board_followings", :action => "edit"
+  post "/update_board_following/:id", :controller => "board_followings", :action => "update"
+
+  # DELETE
+  get "/delete_board_following/:id", :controller => "board_followings", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   root "boards#index"
 

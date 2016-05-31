@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Board Following #<%= @board_following.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @board_following.user_id %></dd>
+
+      <dt>Board</dt>
+      <dd><%= @board_following.board_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/board_followings" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/board_followings/<%= @board_following.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_board_following/<%= @board_following.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

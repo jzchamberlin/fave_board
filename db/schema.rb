@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518174422) do
+ActiveRecord::Schema.define(version: 20160530183204) do
+
+  create_table "board_followings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "board_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "boards", force: :cascade do |t|
     t.integer  "user_id"
@@ -28,9 +35,24 @@ ActiveRecord::Schema.define(version: 20160518174422) do
     t.datetime "updated_at"
   end
 
+  create_table "list_followings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "board_id"
+    t.integer  "list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "lists", force: :cascade do |t|
     t.string   "name"
     t.integer  "board_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_followings", force: :cascade do |t|
+    t.integer  "following_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
