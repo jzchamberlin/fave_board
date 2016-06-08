@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    User requests
+    <a href="/user_requests/new" class="btn btn-lg btn-success">New User request</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Send</th>
+        <th>Receiver</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @user_requests.each do |user_request| %>
+      <tr>
+        <td><%= user_request.send_id %></td>
+        <td><%= user_request.receiver_id %></td>
+        <td>
+          <a href="/user_requests/<%= user_request.id %>" class="btn btn-primary">Show</a>
+          <a href="/user_requests/<%= user_request.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_user_request/<%= user_request.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

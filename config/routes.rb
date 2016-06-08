@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the User_request resource:
+  # CREATE
+  get "/user_requests/new", :controller => "user_requests", :action => "new"
+  post "/create_user_request", :controller => "user_requests", :action => "create"
+
+  # READ
+  get "/user_requests", :controller => "user_requests", :action => "index"
+  get "/user_requests/:id", :controller => "user_requests", :action => "show"
+
+  # UPDATE
+  get "/user_requests/:id/edit", :controller => "user_requests", :action => "edit"
+  post "/update_user_request/:id", :controller => "user_requests", :action => "update"
+
+  # DELETE
+  get "/delete_user_request/:id", :controller => "user_requests", :action => "destroy"
+  #------------------------------
+
   get "/users", :controller => "users", :action => "index"
   get "/users/:id", :controller => "users", :action => "show"
 
@@ -105,6 +122,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_board/:id", :controller => "boards", :action => "destroy"
+
+
   #------------------------------
 
   # The priority is based upon order of creation: first created -> highest priority.

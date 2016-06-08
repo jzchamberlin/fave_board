@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>User Request #<%= @user_request.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Send</dt>
+      <dd><%= @user_request.send_id %></dd>
+
+      <dt>Receiver</dt>
+      <dd><%= @user_request.receiver_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/user_requests" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/user_requests/<%= @user_request.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_user_request/<%= @user_request.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
